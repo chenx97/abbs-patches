@@ -12,11 +12,11 @@ scripts for all packages unavailable in the official AOSC OS
 Simple Usage
 ------------
 
-"""bash
+```bash
 git am <path_to_a_patch>
 cd <ciel_directory>
 ciel build <package_name>
-"""
+```
 
 
 Further Readings
