@@ -1,0 +1,35 @@
+From ce096dfcf34ffc63046cd2590193e224b8497d7b Mon Sep 17 00:00:00 2001
+From: Henry Chen <chenx97@aosc.io>
+Date: Sun, 16 Aug 2020 08:52:19 -0700
+Subject: [PATCH] rhythmcat: new, 20120112
+
+---
+ extra-multimedia/rhythmcat/autobuild/defines | 5 +++++
+ extra-multimedia/rhythmcat/spec              | 3 +++
+ 2 files changed, 8 insertions(+)
+ create mode 100644 extra-multimedia/rhythmcat/autobuild/defines
+ create mode 100644 extra-multimedia/rhythmcat/spec
+
+diff --git a/extra-multimedia/rhythmcat/autobuild/defines b/extra-multimedia/rhythmcat/autobuild/defines
+new file mode 100644
+index 0000000000..0030ccbd89
+--- /dev/null
++++ b/extra-multimedia/rhythmcat/autobuild/defines
+@@ -0,0 +1,5 @@
++PKGNAME=rhythmcat
++PKGSEC=sound
++PKGDEP="dbus-glib gstreamer-0-10 gst-plugins-base-0-10 gst-plugins-good-0-10 gtk-2"
++PKGDES="A music player for Linux"
++
+diff --git a/extra-multimedia/rhythmcat/spec b/extra-multimedia/rhythmcat/spec
+new file mode 100644
+index 0000000000..d7df13b598
+--- /dev/null
++++ b/extra-multimedia/rhythmcat/spec
+@@ -0,0 +1,3 @@
++VER=20120112
++GITSRC=https://github.com/supercatexpert/RhythmCat.git
++GITCO=b4fd316dbc337445ded2b798c7a056fbdd1ab42e
+-- 
+2.27.0
+

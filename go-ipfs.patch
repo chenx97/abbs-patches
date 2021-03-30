@@ -1,0 +1,24 @@
+diff --git a/extra-network/go-ipfs/autobuild/defines b/extra-network/go-ipfs/autobuild/defines
+new file mode 100644
+index 0000000000..9b6e251d17
+--- /dev/null
++++ b/extra-network/go-ipfs/autobuild/defines
+@@ -0,0 +1,9 @@
++PKGNAME=go-ipfs
++PKGSEC=net
++PKGDEP="glibc"
++BUILDDEP="go"
++PKGDES="A global, versioned, peer-to-peer filesystem client"
++
++ABTYPE=gomod
++
++PKGPROV="ipfs"
+diff --git a/extra-network/go-ipfs/spec b/extra-network/go-ipfs/spec
+new file mode 100644
+index 0000000000..de993a6b97
+--- /dev/null
++++ b/extra-network/go-ipfs/spec
+@@ -0,0 +1,3 @@
++VER=0.7.0
++SRCTBL="https://github.com/ipfs/go-ipfs/archive/v$VER.tar.gz"
++CHKSUM="sha256::152986ebb30657ab706bee708fbe929114f5e8c39fbe602e3bbec93fe74c9123"
