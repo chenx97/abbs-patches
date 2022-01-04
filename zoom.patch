@@ -1,10 +1,11 @@
-From d7d09d9b9ea19be96bb207d0aff7800e0764a70f Mon Sep 17 00:00:00 2001
+From e5e9e673e60603edc4b5f3b73744e8635b05dbab Mon Sep 17 00:00:00 2001
 From: Henry Chen <chenx97@aosc.io>
-Date: Mon, 29 Mar 2021 18:35:45 -0700
-Subject: [PATCH] zoom: new, 5.6.13632.0328
+Date: Tue, 4 Jan 2022 09:53:44 -0800
+Subject: [PATCH] zoom: new, 5.9.1.1380
 
 DO NOT COMMIT TO UPSTREAM OR I WILL CANCEL U
 ---
+ extra-web/zoom/autobuild/beyond                 |   2 ++
  extra-web/zoom/autobuild/build                  |   9 +++++++++
  extra-web/zoom/autobuild/defines                |   9 +++++++++
  .../usr/share/applications/Zoom.desktop         |  11 +++++++++++
@@ -13,7 +14,8 @@ DO NOT COMMIT TO UPSTREAM OR I WILL CANCEL U
  .../overrides/usr/share/pixmaps/Zoom.png        | Bin 0 -> 29593 bytes
  .../usr/share/pixmaps/application-x-zoom.png    | Bin 0 -> 29593 bytes
  extra-web/zoom/spec                             |   4 ++++
- 8 files changed, 40 insertions(+)
+ 9 files changed, 42 insertions(+)
+ create mode 100644 extra-web/zoom/autobuild/beyond
  create mode 100644 extra-web/zoom/autobuild/build
  create mode 100644 extra-web/zoom/autobuild/defines
  create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
@@ -23,6 +25,14 @@ DO NOT COMMIT TO UPSTREAM OR I WILL CANCEL U
  create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png
  create mode 100644 extra-web/zoom/spec
 
+diff --git a/extra-web/zoom/autobuild/beyond b/extra-web/zoom/autobuild/beyond
+new file mode 100644
+index 0000000000..2fbbbc58f5
+--- /dev/null
++++ b/extra-web/zoom/autobuild/beyond
+@@ -0,0 +1,2 @@
++abinfo "Fixing permission issues..."
++chmod +x "$PKGDIR"/usr/lib/zoom/libOpenCL.so.1
 diff --git a/extra-web/zoom/autobuild/build b/extra-web/zoom/autobuild/build
 new file mode 100644
 index 0000000000..483ae8f6b6
@@ -1256,13 +1266,13 @@ HcmV?d00001
 
 diff --git a/extra-web/zoom/spec b/extra-web/zoom/spec
 new file mode 100644
-index 0000000000..9d781b8938
+index 0000000000..8abc224ccf
 --- /dev/null
 +++ b/extra-web/zoom/spec
 @@ -0,0 +1,4 @@
-+VER=5.6.13632.0328
++VER=5.9.1.1380
 +SRCS="tbl::https://zoom.us/client/$VER/zoom_x86_64.tar.xz"
-+CHKSUMS="sha256::7ed3b1610f80118649a93bddb017c954c9aa083c787cee9564cbb0cdf8f2c200"
++CHKSUMS="sha256::b99d33f498ed1e3ef41c5379d90e7e597e241251bbcfef1ee2145a28f1d3f5fc"
 +SUBDIR=.
 -- 
 2.30.2
