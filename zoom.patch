@@ -1,43 +1,43 @@
-From e5e9e673e60603edc4b5f3b73744e8635b05dbab Mon Sep 17 00:00:00 2001
+From 27d55d3ef454f0ac6cd4c2bb4ca1f072d95eb0c9 Mon Sep 17 00:00:00 2001
 From: Henry Chen <chenx97@aosc.io>
 Date: Tue, 4 Jan 2022 09:53:44 -0800
-Subject: [PATCH] zoom: new, 5.9.1.1380
+Subject: [PATCH] zoom: new, 5.17.1.1840
 
 DO NOT COMMIT TO UPSTREAM OR I WILL CANCEL U
 ---
- extra-web/zoom/autobuild/beyond                 |   2 ++
- extra-web/zoom/autobuild/build                  |   9 +++++++++
- extra-web/zoom/autobuild/defines                |   9 +++++++++
+ app-web/zoom/autobuild/beyond                   |   2 ++
+ app-web/zoom/autobuild/build                    |   9 +++++++++
+ app-web/zoom/autobuild/defines                  |   9 +++++++++
  .../usr/share/applications/Zoom.desktop         |  11 +++++++++++
  .../overrides/usr/share/doc/zoom/changelog.gz   | Bin 0 -> 157 bytes
  .../overrides/usr/share/mime/packages/zoom.xml  |   7 +++++++
  .../overrides/usr/share/pixmaps/Zoom.png        | Bin 0 -> 29593 bytes
  .../usr/share/pixmaps/application-x-zoom.png    | Bin 0 -> 29593 bytes
- extra-web/zoom/spec                             |   4 ++++
+ app-web/zoom/spec                               |   4 ++++
  9 files changed, 42 insertions(+)
- create mode 100644 extra-web/zoom/autobuild/beyond
- create mode 100644 extra-web/zoom/autobuild/build
- create mode 100644 extra-web/zoom/autobuild/defines
- create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
- create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz
- create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
- create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png
- create mode 100644 extra-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png
- create mode 100644 extra-web/zoom/spec
+ create mode 100644 app-web/zoom/autobuild/beyond
+ create mode 100644 app-web/zoom/autobuild/build
+ create mode 100644 app-web/zoom/autobuild/defines
+ create mode 100644 app-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
+ create mode 100644 app-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz
+ create mode 100644 app-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
+ create mode 100644 app-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png
+ create mode 100644 app-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png
+ create mode 100644 app-web/zoom/spec
 
-diff --git a/extra-web/zoom/autobuild/beyond b/extra-web/zoom/autobuild/beyond
+diff --git a/app-web/zoom/autobuild/beyond b/app-web/zoom/autobuild/beyond
 new file mode 100644
-index 0000000000..2fbbbc58f5
+index 0000000000..2610cd8ec3
 --- /dev/null
-+++ b/extra-web/zoom/autobuild/beyond
++++ b/app-web/zoom/autobuild/beyond
 @@ -0,0 +1,2 @@
 +abinfo "Fixing permission issues..."
 +chmod +x "$PKGDIR"/usr/lib/zoom/libOpenCL.so.1
-diff --git a/extra-web/zoom/autobuild/build b/extra-web/zoom/autobuild/build
+diff --git a/app-web/zoom/autobuild/build b/app-web/zoom/autobuild/build
 new file mode 100644
 index 0000000000..483ae8f6b6
 --- /dev/null
-+++ b/extra-web/zoom/autobuild/build
++++ b/app-web/zoom/autobuild/build
 @@ -0,0 +1,9 @@
 +abinfo "Installing files..."
 +mkdir -pv "$PKGDIR"/usr/lib/zoom
@@ -48,11 +48,11 @@ index 0000000000..483ae8f6b6
 +pushd "$PKGDIR"/usr/bin
 +ln -sv ../lib/zoom/ZoomLauncher zoom
 +popd
-diff --git a/extra-web/zoom/autobuild/defines b/extra-web/zoom/autobuild/defines
+diff --git a/app-web/zoom/autobuild/defines b/app-web/zoom/autobuild/defines
 new file mode 100644
 index 0000000000..6f88853070
 --- /dev/null
-+++ b/extra-web/zoom/autobuild/defines
++++ b/app-web/zoom/autobuild/defines
 @@ -0,0 +1,9 @@
 +PKGNAME=zoom
 +PKGSEC=non-free/net
@@ -63,11 +63,11 @@ index 0000000000..6f88853070
 +ABSPLITDBG=0
 +
 +FAIL_ARCH="!(amd64)"
-diff --git a/extra-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop b/extra-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
+diff --git a/app-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop b/app-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
 new file mode 100644
 index 0000000000..2ce45fbc84
 --- /dev/null
-+++ b/extra-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
++++ b/app-web/zoom/autobuild/overrides/usr/share/applications/Zoom.desktop
 @@ -0,0 +1,11 @@
 +[Desktop Entry]
 +Name=Zoom
@@ -80,7 +80,7 @@ index 0000000000..2ce45fbc84
 +StartupWMClass=Zoom
 +MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus;x-scheme-handler/tel;x-scheme-handler/callto;x-scheme-handler/zoomphonecall;application/x-zoom
 +X-KDE-Protocols=zoommtg;zoomus;tel;callto;zoomphonecall;
-diff --git a/extra-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz b/extra-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz
+diff --git a/app-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz b/app-web/zoom/autobuild/overrides/usr/share/doc/zoom/changelog.gz
 new file mode 100644
 index 0000000000000000000000000000000000000000..7df7e01a3ae1f40eb92d18bc90b2a20b98059fe7
 GIT binary patch
@@ -93,11 +93,11 @@ L>?(W>nE(I)4FE&^
 literal 0
 HcmV?d00001
 
-diff --git a/extra-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml b/extra-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
+diff --git a/app-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml b/app-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
 new file mode 100644
 index 0000000000..38d4616e79
 --- /dev/null
-+++ b/extra-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
++++ b/app-web/zoom/autobuild/overrides/usr/share/mime/packages/zoom.xml
 @@ -0,0 +1,7 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
@@ -106,7 +106,7 @@ index 0000000000..38d4616e79
 +    <glob pattern="*.zoom"/>
 +  </mime-type>
 +</mime-info>
-diff --git a/extra-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png b/extra-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png
+diff --git a/app-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png b/app-web/zoom/autobuild/overrides/usr/share/pixmaps/Zoom.png
 new file mode 100644
 index 0000000000000000000000000000000000000000..82b697d97a0439c75ae9dc1524db3240a7c9c4e2
 GIT binary patch
@@ -685,7 +685,7 @@ U1d++Wo&W#<07*qoM6N<$f@h_92LJ#7
 literal 0
 HcmV?d00001
 
-diff --git a/extra-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png b/extra-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png
+diff --git a/app-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png b/app-web/zoom/autobuild/overrides/usr/share/pixmaps/application-x-zoom.png
 new file mode 100644
 index 0000000000000000000000000000000000000000..82b697d97a0439c75ae9dc1524db3240a7c9c4e2
 GIT binary patch
@@ -1264,16 +1264,16 @@ U1d++Wo&W#<07*qoM6N<$f@h_92LJ#7
 literal 0
 HcmV?d00001
 
-diff --git a/extra-web/zoom/spec b/extra-web/zoom/spec
+diff --git a/app-web/zoom/spec b/app-web/zoom/spec
 new file mode 100644
-index 0000000000..8abc224ccf
+index 0000000000..7f6e305937
 --- /dev/null
-+++ b/extra-web/zoom/spec
++++ b/app-web/zoom/spec
 @@ -0,0 +1,4 @@
-+VER=5.9.1.1380
++VER=5.17.1.1840
 +SRCS="tbl::https://zoom.us/client/$VER/zoom_x86_64.tar.xz"
-+CHKSUMS="sha256::b99d33f498ed1e3ef41c5379d90e7e597e241251bbcfef1ee2145a28f1d3f5fc"
++CHKSUMS="sha256::b7eeac3c210673fa200b1f8e00e4785d9133ff1287237f66ef192a07cb296851"
 +SUBDIR=.
 -- 
-2.30.2
+2.39.1
 
